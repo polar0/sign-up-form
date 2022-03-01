@@ -30,7 +30,6 @@ body {
 
 .left {
   position: relative;
-  top: 200px;
   width: 35%;
   display: flex;
   justify-content: center;
@@ -41,6 +40,7 @@ body {
 }
 
 .banner {
+  top: 200px;
   color: white;
   font-size: 3rem;
   background: black;
