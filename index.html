@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
+    <script type="module" src="./main.js" defer></script>
+    <title>Sign Up Form</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="left">
+        <div class="banner">
+          <div class="logo">
+            <img
+              src="./assets/images/noun-portal-63273.svg"
+              alt="logo"
+              width="100%"
+            />
+          </div>
+          <div class="title">polar</div>
+        </div>
+      </div>
+      <div class="right">
+        <div class="right-content">
+          <div class="caption">
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deleniti
+              officiis fugiat animi debitis voluptatibus veritatis maxime
+              voluptatum? Fugiat quaerat sapiente totam officia beatae, hic
+              labore error, accusamus magni placeat voluptate!
+            </p>
+          </div>
+
+          <form novalidate action="#" method="post">
+            <div id="sign-up">
+              <div class="form-header">
+                <legend>Sign Up</legend>
+                <div class="header-comment">comment</div>
+              </div>
+              <div class="form-content">
+                <div class="form-element first-name">
+                  <label for="first-name">First name</label>
+                  <input
+                    type="text"
+                    id="first-name"
+                    name="first-name"
+                    placeholder="Bob"
+                    minlength="3"
+                    maxlength="20"
+                    required
+                  />
+                  <span></span><span class="error" aria-live="polite"></span>
+                </div>
+                <div class="form-element last-name">
+                  <label for="last-name">Last name</label>
+                  <input
+                    type="text"
+                    id="last-name"
+                    name="last-name"
+                    placeholder="Doe"
+                    maxlength="20"
+                  />
+                  <span></span>
+                </div>
+                <div class="form-element email">
+                  <label for="email">Email</label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="bobdoe@email.com"
+                    minlength="6"
+                    maxlength="30"
+                    required
+                  />
+                  <span></span><span class="error" aria-live="polite"></span>
+                </div>
+                <div class="form-element phone">
+                  <label for="phone">Phone number</label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    placeholder="123 456 7890"
+                    maxlength="20"
+                  />
+                  <span></span><span class="error" aria-live="polite"></span>
+                </div>
+                <div class="form-element psw">
+                  <label for="psw">Password</label>
+                  <input
+                    type="password"
+                    id="psw"
+                    name="psw"
+                    placeholder=" "
+                    pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,30}"
+                    maxlength="30"
+                    required
+                  />
+                  <span></span><span class="error" aria-live="polite"></span>
+                </div>
+                <div class="form-element psw-confirm">
+                  <label for="psw-confirm">Confirm password</label>
+                  <input
+                    type="password"
+                    id="psw-confirm"
+                    name="psw-confirm"
+                    placeholder=" "
+                    maxlength="30"
+                    required
+                  />
+                  <span></span><span class="error" aria-live="polite"></span>
+                </div>
+              </div>
+            </div>
+            <div id="error-container"></div>
+            <div class="submit">
+              <button type="submit">Create Account</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

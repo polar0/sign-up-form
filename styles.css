@@ -1,0 +1,241 @@
+@font-face {
+  font-family: Blacklisted;
+  src: url(./assets//fonts/Blacklisted.ttf);
+}
+
+@font-face {
+  font-family: 'Zekton rg';
+  src: url(./assets/fonts/zekton\ rg.ttf);
+}
+
+:root {
+  --alt-color: rgb(160, 108, 213);
+}
+
+body {
+  font-family: 'Zekton rg';
+  font-size: 20px;
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  background-image: url(./assets/images/PolygonLuminary.svg);
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+}
+
+.left {
+  position: relative;
+  top: 200px;
+  width: 35%;
+  display: flex;
+  justify-content: center;
+}
+
+.left > * {
+  font-family: Blacklisted;
+}
+
+.banner {
+  color: white;
+  font-size: 3rem;
+  background: black;
+  height: 100px;
+  box-shadow: 2px 2px 100px 100px black;
+
+  flex: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 0;
+}
+
+.banner > .title {
+  position: relative;
+  left: -10rem;
+  top: 0.7rem;
+  text-shadow: 2px 0 10px black;
+  font-size: 1.2em;
+  z-index: 2;
+
+  transition: transform 1s, z-index 1s, text-shadow 1s;
+}
+
+.banner > .logo {
+  position: relative;
+  left: 5.5rem;
+  filter: drop-shadow(10px 10px 10px white);
+  width: 15rem;
+  opacity: 1;
+  z-index: 1;
+
+  transition: transform 1s, z-index 1s, filter 1s;
+}
+
+.banner:hover > .logo {
+  transform: translate(-60px);
+  z-index: 2;
+  filter: drop-shadow(10px 10px 10px var(--alt-color));
+}
+.banner:hover > .title {
+  transform: translate(90px);
+  z-index: 1;
+  text-shadow: 2px 0 10px white;
+}
+
+.right {
+  flex: 1;
+
+  z-index: 10;
+}
+
+.right-content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.caption,
+.submit {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 2rem;
+}
+
+.caption {
+  padding-top: clamp(5rem, 10rem, 15rem);
+  line-height: 1.7em;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+}
+
+.submit {
+  flex: 1;
+}
+
+.form-header {
+  display: flex;
+  align-items: center;
+}
+
+.header-comment {
+  flex: 1 0 auto;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--alt-color);
+}
+
+form {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+#sign-up {
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 2rem;
+
+  transition: transform 0.5s, filter 0.5s;
+}
+
+#sign-up:hover {
+  transform: translate(-20px, 0);
+}
+
+legend {
+  font-size: 2rem;
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.form-content {
+  display: grid;
+  grid-template-columns: 45% 45%;
+  gap: 10px 70px;
+}
+
+.form-content > div {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+input {
+  appearance: none;
+  -webkit-appearance: none;
+  border: 1px solid var(--alt-color);
+
+  width: auto;
+  padding: 0.3rem;
+}
+
+input:required {
+  border: 2px solid #a64253;
+}
+
+input:focus {
+  outline: none;
+  box-shadow: 0px 0px 5px #ffffff;
+  border: 2px solid var(--alt-color);
+}
+
+input + span::after {
+  font-size: 0.8rem;
+  border-radius: 3px;
+
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0 10px;
+}
+
+input:required + span::after {
+  content: 'required';
+}
+
+input:not(:placeholder-shown):valid + span::after {
+  content: '✔';
+  color: var(--alt-color);
+}
+
+input:not(:placeholder-shown):invalid + span::after {
+  content: '✖';
+  color: #a64253;
+}
+
+#error-container {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #ffffff;
+  padding: auto 2rem;
+}
+
+.form-element > span.error {
+  font-size: 0.9rem;
+  color: #a64253;
+
+  position: relative;
+  top: -0.5rem;
+}
+
+button {
+  font-family: 'Zekton rg';
+  background: var(--alt-color);
+  color: white;
+
+  border: 0;
+  padding: 0.7rem 2rem;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+button:hover {
+}
