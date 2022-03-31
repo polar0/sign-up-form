@@ -7,7 +7,7 @@ What was new ?
 - Form basics and validation with and without JavaScript
 - Working with tables
 - Using Emmet in an efficient way
-  CSS
+
 - Styling, units, selectors and positioning
 - Introduction to Frameworks and Preprocessors
 
