@@ -47,7 +47,7 @@ function getValidity() {
   }
 }
 
-function displayNotif('error', input) {
+function displayNotif(type, input) {
   errorSpan = document.querySelector(`#${input.id} ~ span.error`);
   label = document.querySelector(`.${input.id} > label`).textContent;
 
