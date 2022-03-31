@@ -169,6 +169,7 @@ legend {
 }
 
 input {
+  position: relative;
   appearance: none;
   -webkit-appearance: none;
   border: 1px solid var(--alt-color);

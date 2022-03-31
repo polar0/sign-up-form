@@ -16,7 +16,7 @@ let label;
 form.addEventListener('submit', function (e) {
   for (const field of fields) {
     if (!field.validity.valid) {
-      displayError(field);
+      displayNotif('error', field);
       e.preventDefault();
       errorMessage.textContent =
         'There is an error in your form. Please check it again.';
@@ -43,11 +43,11 @@ function getValidity() {
   if (this === psw || this === pswConfirm) {
     getPsw();
   } else {
-    displayError(this);
+    displayNotif('error', this);
   }
 }
 
-function displayError(input) {
+function displayNotif('error', input) {
   errorSpan = document.querySelector(`#${input.id} ~ span.error`);
   label = document.querySelector(`.${input.id} > label`).textContent;
 
@@ -57,9 +57,9 @@ function displayError(input) {
     // Email
     if (input === email) {
       if (email.validity.valueMissing) {
-        errorSpan.textContent = 'You need to enter an email adress.';
+        errorSpan.textContent = 'You need to enter an email address.';
       } else if (email.validity.typeMismatch) {
-        errorSpan.textContent = 'You must provide a valid email adress.';
+        errorSpan.textContent = 'You must provide a valid email address.';
       }
       // Password
     } else if (input === pswConfirm) {
@@ -77,13 +77,13 @@ function displayError(input) {
 
 function getPsw() {
   if (!psw.validity.valid) {
-    displayError(psw);
+    displayNotif('error', psw);
   } else {
     pswError.textContent = '';
   }
   if (psw.value !== pswConfirm.value) {
     pswConfirm.setCustomValidity('Invalid');
-    displayError(pswConfirm);
+    displayNotif('error', pswConfirm);
   } else {
     pswConfirmError.textContent = '';
     if (psw.validity.valid) {
